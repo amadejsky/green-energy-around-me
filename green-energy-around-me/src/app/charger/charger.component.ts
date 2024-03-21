@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { chargerInfo } from '../../shared/charger-info';
+
 
 @Component({
   selector: 'app-charger',
@@ -8,9 +9,11 @@ import { chargerInfo } from '../../shared/charger-info';
 })
 export class ChargerComponent {
   @Input('charger') charger: chargerInfo = new chargerInfo({});
+  @Output() passData = new EventEmitter<chargerInfo>();
 
-  getDetails(){
+  getDetails(selectedCh: chargerInfo){
     console.log('I ll show you the details from: '+this.charger.AddressInfo);
+    this.passData.emit(selectedCh);
   }
 
 }

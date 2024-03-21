@@ -1,15 +1,13 @@
 <p>green-energy works!</p>
 <div class="row">
-    <div class="body">
+    <div class="col-md-6 body">
         <form>     
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <label for="Distance">Radius </label>
-                <select id="distance" name="radius" [(ngModel)]="inputRadius" name="inputRadius">
+                <select class="form-select form-select-sm mb-2" id="distance" name="radius" [(ngModel)]="inputRadius" name="inputRadius">
                     <option value="5">5 km</option>
                     <option value="10">10 km</option>
-                    <option value="15">15 km</option>
                     <option value="20">20 km</option>
-                    <option value="25">25 km</option>
                     <option value="25">30 km</option>
                     <option value="25">40 km</option>
                     <option value="25">50 km</option>
@@ -23,10 +21,14 @@
                 <label for="Longitude">Longitude</label>
                 <input type="text" class="form-control" [(ngModel)]="inputLongitude" name="inputLongitude">
             </div>
-            <button type="submit" class="btn btn-success" (click)="search()">Search</button>
+            <button type="submit" class="btn btn-outline-success" (click)="search()">Search</button>
             <hr>
         </form>
-         <app-charger *ngFor="let charger of chargers" [charger]="charger"></app-charger>
+         <app-charger *ngFor="let charger of chargers" [charger]="charger" (passData)="selectedCharger(charger)" ></app-charger>
+         <hr>
     </div>
-   
+   <div class="col-md-5">
+        <app-place-details></app-place-details>
+   </div>
 </div>
+

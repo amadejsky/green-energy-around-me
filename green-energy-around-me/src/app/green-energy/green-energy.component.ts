@@ -56,4 +56,8 @@ export class GreenEnergyComponent implements OnInit {
       console.error('There was an error:', error);
     });
   }
+
+  selectedCharger(charger: chargerInfo){
+    console.log('selected components data: '+charger);
+  }
 }

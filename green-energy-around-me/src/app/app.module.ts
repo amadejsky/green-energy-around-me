@@ -8,6 +8,7 @@ import { GreenEnergyComponent } from './green-energy/green-energy.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ChargerComponent } from './charger/charger.component';
 import { FormsModule } from '@angular/forms';
+import { PlaceDetailsComponent } from './place-details/place-details.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     HeaderComponent,
     GreenEnergyComponent,
-    ChargerComponent
+    ChargerComponent,
+    PlaceDetailsComponent
   ],
   imports: [
     BrowserModule,
