@@ -9,5 +9,8 @@ import { chargerInfo } from '../../shared/charger-info';
 export class ChargerComponent {
   @Input('charger') charger: chargerInfo = new chargerInfo({});
 
+  getDetails(){
+    console.log('I ll show you the details from: '+this.charger.AddressInfo);
+  }
 
 }

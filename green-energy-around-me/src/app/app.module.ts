@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { GreenEnergyComponent } from './green-energy/green-energy.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ChargerComponent } from './charger/charger.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { ChargerComponent } from './charger/charger.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()
