@@ -23,7 +23,7 @@ export class chargerInfo {
       Distance: number | null;
       DistanceUnit: number | null;
     };
-    Connections: any[]; // Typ do zdefiniowania
+    Connections: any[]; 
     DataProvider: {
       WebsiteURL: string;
       Comments: string | null;
@@ -81,7 +81,7 @@ export class chargerInfo {
     SubmissionStatusTypeID: number;
     UUID: string;
     UsageCost: string;
-    UsageType: any | null; // Typ do zdefiniowania
+    UsageType: any | null;
     UsageTypeID: number | null;
     UserComments: string | null;
   

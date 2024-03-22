@@ -13,6 +13,9 @@ export class GreenEnergyComponent implements OnInit {
   inputLatitude = 0;
   inputLongitude = 0;
   inputRadius = 0;
+  selectedChargerData: chargerInfo = new chargerInfo({});
+  isPolandSelected: boolean = true;
+
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
@@ -37,20 +40,25 @@ export class GreenEnergyComponent implements OnInit {
   }
 
   search() {
+    if (this.inputRadius === 0) {
+      this.inputRadius = 1;
+  }
     console.log(this.inputLatitude, this.inputLongitude, this.inputRadius);
     const apiUrl = `https://api.openchargemap.io/v3/poi/?output=json&key=${this.apiKey}&latitude=${this.inputLatitude}&longitude=${this.inputLongitude}&distance=${this.inputRadius}`;
 
     this.http.get(apiUrl).subscribe((data: any) => {
-      this.chargers = []; // Clear previous data
+      this.chargers = []; 
+      const newChargers: chargerInfo[] = []; 
       data.forEach((chargerData: any) => {
         const charger = new chargerInfo(chargerData);
-        this.chargers.push(charger);
+        newChargers.push(charger);
       });
+      this.chargers = newChargers;
       console.log(data);
       console.log(this.chargers);
       console.log(this.chargers[0]);
 
-      // Potrzebne jest odświeżenie widoku po otrzymaniu nowych danych
+      //odświeżenie widoku po otrzymaniu nowych danych
       this.cdr.detectChanges();
     }, (error: any) => {
       console.error('There was an error:', error);
@@ -59,5 +67,33 @@ export class GreenEnergyComponent implements OnInit {
 
   selectedCharger(charger: chargerInfo){
     console.log('selected components data: '+charger);
+    this.selectedChargerData=charger;
+
+  }
+
+  searchWithValues(latitude: number,longitude:number) {
+    if (this.inputRadius === 0) {
+      this.inputRadius = 15;
+  }
+    console.log(this.inputLatitude, this.inputLongitude, this.inputRadius);
+    const apiUrl = `https://api.openchargemap.io/v3/poi/?output=json&key=${this.apiKey}&latitude=${latitude}&longitude=${longitude}&distance=${this.inputRadius}`;
+
+    this.http.get(apiUrl).subscribe((data: any) => {
+      this.chargers = []; 
+      const newChargers: chargerInfo[] = []; 
+      data.forEach((chargerData: any) => {
+        const charger = new chargerInfo(chargerData);
+        newChargers.push(charger);
+      });
+      this.chargers = newChargers;
+      console.log(data);
+      console.log(this.chargers);
+      console.log(this.chargers[0]);
+
+      //odświeżenie widoku po otrzymaniu nowych danych
+      this.cdr.detectChanges();
+    }, (error: any) => {
+      console.error('There was an error:', error);
+    });
   }
 }

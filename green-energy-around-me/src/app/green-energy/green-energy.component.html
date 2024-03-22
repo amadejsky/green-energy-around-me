@@ -1,10 +1,11 @@
 <p>green-energy works!</p>
 <div class="row">
-    <div class="col-md-6 body">
+    <div class="col-md-3 body">
         <form>     
             <div class="form-group col-md-4">
                 <label for="Distance">Radius </label>
                 <select class="form-select form-select-sm mb-2" id="distance" name="radius" [(ngModel)]="inputRadius" name="inputRadius">
+                    <option value="5">1 km</option>
                     <option value="5">5 km</option>
                     <option value="10">10 km</option>
                     <option value="20">20 km</option>
@@ -27,8 +28,56 @@
          <app-charger *ngFor="let charger of chargers" [charger]="charger" (passData)="selectedCharger(charger)" ></app-charger>
          <hr>
     </div>
+    <div class="col-md-3">
+        <div class="col-md-2">
+            <div class="btn-group">
+                <button class="btn btn-outline-success" type="submit" (click)="isPolandSelected=!isPolandSelected">Polska</button>
+                <button class="btn btn-outline-success" type="submit">Niemcy</button>
+            </div>
+        </div>
+       
+      <div class="div" *ngIf="isPolandSelected">
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-outline-success" type="submit" (click)="searchWithValues(52.2297,21.01221)">Warszawa</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-outline-success" type="submit" (click)="searchWithValues(54.3520,18.6466)">Gdańsk</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-outline-success" type="submit" (click)="searchWithValues(51.2465,22.5684)" >Lublin</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-outline-success" type="submit" (click)="searchWithValues(51.4029,21.1471)">Radom</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-outline-success" type="submit" (click)="searchWithValues(50.0442,19.5071)" >Katowice</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-outline-success" type="submit" (click)="searchWithValues(50.0647,19.9450)" >Kraków</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-outline-success" type="submit" (click)="searchWithValues(53.7784,20.4801)" >Olsztyn</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-outline-success" type="submit" (click)="searchWithValues(51.7592,19.4554)" >Łódź</button>
+            </div>
+        </div>
+    </div>
+      </div>
+       
    <div class="col-md-5">
-        <app-place-details></app-place-details>
+        <app-place-details *ngIf="selectedChargerData; else infoText" [charger]="selectedChargerData"></app-place-details>
+        <p *ngIf="!selectedChargerData">No charger selected. Please search and select a charger.</p>
    </div>
+   <ng-template #infoText>
+    <p>No charger selected. Please search and select a charger.</p>
+  </ng-template>
 </div>
 

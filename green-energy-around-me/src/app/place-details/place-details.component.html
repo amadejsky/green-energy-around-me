@@ -1,1 +1,27 @@
-<p>place-details works!</p>
+ <div class="row">
+    <div class="col-md-6">
+        <h2>{{charger.AddressInfo.AddressLine1}}</h2>
+    </div>
+   <div class="div" style="display: inline-block;">
+        {{charger.AddressInfo.Town}}
+        {{charger.AddressInfo.Postcode}}
+        {{charger.AddressInfo.Country ? charger.AddressInfo.Country.Title : ''}}
+    </div>
+    <!-- <div class="row" style="display: inline-block;">Place Contact: <a href="mailto:{{charger.AddressInfo.ContactEmail}}">{{charger.AddressInfo.ContactEmail}}</a></div>
+    <div class="row">{{charger.AddressInfo.ContactTelephone1}}</div>
+    <div class="row" style="display: inline-block;">
+        Charger provider website:
+        <a *ngIf="charger.DataProvider?.WebsiteURL" href="{{charger.DataProvider.WebsiteURL}}" target="_blank">{{charger.DataProvider.WebsiteURL}}</a>
+    </div>
+    
+    <div class="row">Date of creation: {{charger.DateCreated}}</div>
+    <div class="row">Date of latest update:{{charger.DateLastStatusUpdate}}</div>
+    <div class="row" style="display: inline-block;">
+        Operator Website:
+        <a *ngIf="charger.OperatorInfo?.WebsiteURL" href="{{ charger.OperatorInfo.WebsiteURL }}" target="_blank">{{ charger.OperatorInfo.WebsiteURL }}</a>
+    </div>
+    
+    <div class="row">Operator Phone Contact:{{charger.OperatorInfo.PhonePrimaryContact}}</div>
+    <div class="row">Usage Cost:{{charger.UsageCost}}</div>
+    <div class="row">Additional user comments{{charger.UserComments}}</div>
+</div> --> 

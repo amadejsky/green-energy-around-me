@@ -23,7 +23,7 @@ import { PlaceDetailsComponent } from './place-details/place-details.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     provideClientHydration()

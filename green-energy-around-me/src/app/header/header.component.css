@@ -1,12 +1,3 @@
-.body{
-    margin-top: 0;
-    background-color: #44bd32;
-    background: linear-gradient(to right, #44bd32, #1f51f6);
-    height: 7.7vh;
-    color:white;
-    font-size: 2rem;
-}
-p{
-    margin-top: 2vh;
-    margin-left: 2vh;
+a{
+    color: white;
 }
