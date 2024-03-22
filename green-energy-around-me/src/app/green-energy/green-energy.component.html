@@ -25,54 +25,43 @@
             <button type="submit" class="btn btn-outline-success" (click)="search()">Search</button>
             <hr>
         </form>
-         <app-charger *ngFor="let charger of chargers" [charger]="charger" (passData)="selectedCharger(charger)" ></app-charger>
+        <div style="overflow-y: auto; height: 300px;">
+            <div *ngFor="let charger of chargers">
+              <app-charger [charger]="charger" (passData)="selectedCharger(charger)"></app-charger>
+            </div>
+          </div>
          <hr>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
         <div class="col-md-2">
             <div class="btn-group">
-                <button class="btn btn-outline-success" type="submit" (click)="isPolandSelected=!isPolandSelected">Polska</button>
-                <button class="btn btn-outline-success" type="submit">Niemcy</button>
+                <button class="btn btn-outline-success" type="submit" (click)="selectedPoland()">Poland</button>
+                <button class="btn btn-outline-success" type="submit" (click)="selectedGermany()">Germany</button>  
             </div>
         </div>
-       
-      <div class="div" *ngIf="isPolandSelected">
-        <div class="row">
-            <div class="col">
-                <button class="btn btn-outline-success" type="submit" (click)="searchWithValues(52.2297,21.01221)">Warszawa</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-outline-success" type="submit" (click)="searchWithValues(54.3520,18.6466)">Gdańsk</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button class="btn btn-outline-success" type="submit" (click)="searchWithValues(51.2465,22.5684)" >Lublin</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-outline-success" type="submit" (click)="searchWithValues(51.4029,21.1471)">Radom</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button class="btn btn-outline-success" type="submit" (click)="searchWithValues(50.0442,19.5071)" >Katowice</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-outline-success" type="submit" (click)="searchWithValues(50.0647,19.9450)" >Kraków</button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <button class="btn btn-outline-success" type="submit" (click)="searchWithValues(53.7784,20.4801)" >Olsztyn</button>
-            </div>
-            <div class="col">
-                <button class="btn btn-outline-success" type="submit" (click)="searchWithValues(51.7592,19.4554)" >Łódź</button>
-            </div>
-        </div>
-    </div>
+        <div class="list-group" *ngIf="isPolandSelected">
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(52.2297,21.01221)">Warszawa</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(52.2297,21.01221)">Gdańsk</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(51.2465,22.5684)">Lublin</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(51.4029,21.1471)">Radom</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(50.0442,19.5071)">Katowice</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(50.0647,19.9450)">Kraków</button>
+          </div>
+        <div class="list-group" *ngIf="isGermanySelected">      
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(52.5200,13.4050)">Berlin</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(53.5511,9.9937)">Hamburg</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(48.1351,11.5820)" >Munich</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(50.9375,6.9603)">Cologne</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(50.1109,8.6821)" >Frankfurt</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(51.0504,13.7373)" >Dresden</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(52.3759,9.7320)" >Hanover</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(48.7758,9.1829)" >Stuttgart</button>
+          </div>  
+
+   
       </div>
        
-   <div class="col-md-5">
+   <div class="col-md-6">
         <app-place-details *ngIf="selectedChargerData; else infoText" [charger]="selectedChargerData"></app-place-details>
         <p *ngIf="!selectedChargerData">No charger selected. Please search and select a charger.</p>
    </div>

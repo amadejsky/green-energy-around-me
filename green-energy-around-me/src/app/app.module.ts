@@ -9,6 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ChargerComponent } from './charger/charger.component';
 import { FormsModule } from '@angular/forms';
 import { PlaceDetailsComponent } from './place-details/place-details.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatSliderModule } from '@angular/material/slider';
+
 
 
 @NgModule({
@@ -24,9 +27,11 @@ import { PlaceDetailsComponent } from './place-details/place-details.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatSliderModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

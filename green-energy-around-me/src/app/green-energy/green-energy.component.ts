@@ -15,9 +15,20 @@ export class GreenEnergyComponent implements OnInit {
   inputRadius = 0;
   selectedChargerData: chargerInfo = new chargerInfo({});
   isPolandSelected: boolean = true;
+  isGermanySelected: boolean = false;
 
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
+
+  selectedPoland(){
+    this.isPolandSelected=!this.isPolandSelected;
+    this.isGermanySelected=false;
+  }
+
+  selectedGermany(){
+    this.isPolandSelected=false;
+    this.isGermanySelected=!this.isGermanySelected;
+  }
 
   ngOnInit() {
     const latitude = 52.2297; // wwa
@@ -71,12 +82,12 @@ export class GreenEnergyComponent implements OnInit {
 
   }
 
-  searchWithValues(latitude: number,longitude:number) {
+  searchWithValues(latitudePassed: number,longitudePassed:number) {
     if (this.inputRadius === 0) {
       this.inputRadius = 15;
   }
-    console.log(this.inputLatitude, this.inputLongitude, this.inputRadius);
-    const apiUrl = `https://api.openchargemap.io/v3/poi/?output=json&key=${this.apiKey}&latitude=${latitude}&longitude=${longitude}&distance=${this.inputRadius}`;
+    console.log(latitudePassed, longitudePassed, this.inputRadius);
+    const apiUrl = `https://api.openchargemap.io/v3/poi/?output=json&key=${this.apiKey}&latitude=${latitudePassed}&longitude=${longitudePassed}&distance=${this.inputRadius}`;
 
     this.http.get(apiUrl).subscribe((data: any) => {
       this.chargers = []; 
