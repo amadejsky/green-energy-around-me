@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.info{
+    margin-left: 10vh;
+    margin-top: 10vh;
+    border: 3px solid #4cd137;
+    width:35vw;
+    height:auto;
+    font-size: larger;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    position: absolute;
+    box-shadow: 12px 13px 22px 1px rgba(88,88,88,1);
+    -webkit-box-shadow: 12px 13px 22px 1px rgba(88,88,88,1);
+    -moz-box-shadow: 12px 13px 22px 1px rgba(88,88,88,1);
+    font-family: "Roboto", sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+.body{
+    position: relative;
+    width:100vw;
+    height:100vh;
+    background-image: url("../../assets/electricc2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0; 
+    padding: 0;
+}
+span{
+    background-color: aqua;
+    font-size: 1.5rem;
+}

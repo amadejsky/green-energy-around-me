@@ -6,3 +6,7 @@
     margin-bottom: 0.6rem;
     /* background-color: #44bd32; */
 }
+
+.list-group-item{
+    background-color: #ecf0f1;
+}

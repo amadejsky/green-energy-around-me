@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { PlaceDetailsComponent } from './place-details/place-details.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatSliderModule } from '@angular/material/slider';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -20,7 +21,8 @@ import { MatSliderModule } from '@angular/material/slider';
     HeaderComponent,
     GreenEnergyComponent,
     ChargerComponent,
-    PlaceDetailsComponent
+    PlaceDetailsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

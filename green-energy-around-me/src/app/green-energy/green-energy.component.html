@@ -1,4 +1,3 @@
-<p>green-energy works!</p>
 <div class="row">
     <div class="col-md-3 body">
         <form>     
@@ -46,6 +45,12 @@
             <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(51.4029,21.1471)">Radom</button>
             <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(50.0442,19.5071)">Katowice</button>
             <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(50.0647,19.9450)">Kraków</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(50.6755,17.9213)">Opole</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(50.0412,21.9991)">Rzeszów</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(51.9356,15.5064)">Zielona Góra</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(53.4285,14.5528)">Szczecin</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(53.1235,18.0076)">Bydgoszcz</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(53.0138,18.5984)">Toruń</button>
           </div>
         <div class="list-group" *ngIf="isGermanySelected">      
             <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(52.5200,13.4050)">Berlin</button>
@@ -56,11 +61,24 @@
             <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(51.0504,13.7373)" >Dresden</button>
             <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(52.3759,9.7320)" >Hanover</button>
             <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(48.7758,9.1829)" >Stuttgart</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(51.3397,12.3731)" >Leipzig</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(51.5136,7.4653)" >Dortmund</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(49.4521,11.0767)" >Nürnberg</button>
+            <button type="button" class="list-group-item list-group-item-action" (click)="searchWithValues(53.0793,8.8017)" >Bremen</button>
           </div>  
-
+          <form>
+            <div class="form-group">
+              <label for="formControlRange">Distance (km)</label>
+              <input type="range" class="form-control-range" id="formControlRange" min="1" max="50" [(ngModel)]="inputRadius" (input)="updateInputRadius($event)">
+              <br><span>{{ inputRadius }} km</span>
+            </div>
+          </form>
+          
+          
    
       </div>
-       
+      
+      
    <div class="col-md-6">
         <app-place-details *ngIf="selectedChargerData; else infoText" [charger]="selectedChargerData"></app-place-details>
         <p *ngIf="!selectedChargerData">No charger selected. Please search and select a charger.</p>

@@ -30,6 +30,15 @@ export class GreenEnergyComponent implements OnInit {
     this.isGermanySelected=!this.isGermanySelected;
   }
 
+  updateInputRadius(event: any) {
+    const value = event.target.value;
+    if (value) {
+      this.inputRadius = parseFloat(value);
+      this.cdr.detectChanges(); // Wywołanie detekcji zmian w widoku
+    }
+  }
+  
+
   ngOnInit() {
     const latitude = 52.2297; // wwa
     const longitude = 21.0122; // wwa

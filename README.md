@@ -6,6 +6,9 @@ Green Energy Around Me is a web application that allows users to find and locate
 
 Green Energy Around Me is a project aimed at facilitating users in finding and using electric vehicle charging stations, while also promoting the use of renewable energy.
 
+## Overview
+![Green Energy Around Me](https://github.com/amadejsky/Resources/blob/main/green-energy-around-you.png)
+
 ## Technologies
 
 The project utilizes the following technologies:
@@ -15,11 +18,11 @@ The project utilizes the following technologies:
 - HTML/CSS: Web technologies for creating the user interface
 - OpenChargeMap API: API for retrieving data about charging stations
 
-## Instalation
+## Installation
 
 To run a local copy of the application, follow these steps:
 
-1. Clone the repository: git clone `https://github.com/your-username/green-energy-around-me.git`
+1. Clone the repository: `git clone https://github.com/your-username/green-energy-around-me.git`
 2. Navigate to the project directory: `cd green-energy-around-me`
 3. Install dependencies: `npm install`
 
@@ -28,9 +31,8 @@ To run a local copy of the application, follow these steps:
 After installing dependencies, run the application locally:
 
 1. Start the application: `npm start`
-2. Open your browser and go to: `http://localhost:4200`
+2. Open your browser and go to: [http://localhost:4200](http://localhost:4200)
 
-## Autor
+## Author
 
-Adrian Madejski - (https://www.linkedin.com/in/amadejski/)
-
+Adrian Madejski - [LinkedIn](https://www.linkedin.com/in/amadejski/)
