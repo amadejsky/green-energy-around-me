@@ -17,6 +17,7 @@ The project utilizes the following technologies:
 - TypeScript: Programming language used in Angular
 - HTML/CSS: Web technologies for creating the user interface
 - OpenChargeMap API: API for retrieving data about charging stations
+- Google Maps API: API for retrieving and visualizing location of selected station
 
 ## Installation
 
@@ -32,6 +33,7 @@ After installing dependencies, run the application locally:
 
 1. Start the application: `npm start`
 2. Open your browser and go to: [http://localhost:4200](http://localhost:4200)
+3. To begin using the application, select "App" from the navigation bar.
 
 ## Author
 
