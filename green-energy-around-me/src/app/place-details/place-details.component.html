@@ -39,6 +39,6 @@
         Usage Cost:{{charger.UsageCost}}
     </div>
     <div class="row" *ngIf="charger.UserComments">
-        Additional user comments: {{charger.UserComments}}
+        Additional user comments: {{ parseUserComments(charger.UserComments) }}
     </div>
 </div>
