@@ -12,6 +12,7 @@ import { PlaceDetailsComponent } from './place-details/place-details.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatSliderModule } from '@angular/material/slider';
 import { AboutComponent } from './about/about.component';
+import { SomethingWrongComponent } from './something-wrong/something-wrong.component';
 
 
 
@@ -22,14 +23,16 @@ import { AboutComponent } from './about/about.component';
     GreenEnergyComponent,
     ChargerComponent,
     PlaceDetailsComponent,
-    AboutComponent
+    AboutComponent,
+    SomethingWrongComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MatSliderModule
+    MatSliderModule,
+    AppRoutingModule
   ],
   providers: [
     provideClientHydration(),

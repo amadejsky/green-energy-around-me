@@ -16,6 +16,7 @@ export class GreenEnergyComponent implements OnInit {
   selectedChargerData: chargerInfo = new chargerInfo({});
   isPolandSelected: boolean = true;
   isGermanySelected: boolean = false;
+  isCzechRepublicSelected: boolean = false;
 
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
@@ -23,12 +24,22 @@ export class GreenEnergyComponent implements OnInit {
   selectedPoland(){
     this.isPolandSelected=!this.isPolandSelected;
     this.isGermanySelected=false;
+    this.isCzechRepublicSelected=false;
   }
 
   selectedGermany(){
     this.isPolandSelected=false;
     this.isGermanySelected=!this.isGermanySelected;
+    this.isCzechRepublicSelected=false;
   }
+
+  selectedCzechRepublic(){
+    this.isCzechRepublicSelected=true;
+    this.isPolandSelected=false;
+    this.isGermanySelected=false;
+  }
+
+
 
   updateInputRadius(event: any) {
     const value = event.target.value;
