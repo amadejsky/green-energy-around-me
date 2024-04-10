@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent {
   @Output() selectedMenu = new EventEmitter<string>();
-
+  constructor(private router: Router){}
   selectedApp(){
     this.selectedMenu.emit("App");
   }
@@ -15,5 +16,11 @@ export class HeaderComponent {
   selectedAbout(){
     this.selectedMenu.emit("About");
   }
+
+  // refreshPage(): void {
+  //   this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+  //     this.router.navigate([this.router.url]);
+  //   });
+  // }
 
 }

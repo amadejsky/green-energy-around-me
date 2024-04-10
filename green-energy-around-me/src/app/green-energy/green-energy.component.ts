@@ -62,9 +62,9 @@ export class GreenEnergyComponent implements OnInit {
         const charger = new chargerInfo(chargerData);
         this.chargers.push(charger);
       });
-      console.log(data);
-      console.log(this.chargers);
-      console.log(this.chargers[0]);
+      // console.log(data);
+      // console.log(this.chargers);
+      // console.log(this.chargers[0]);
     }, (error: any) => {
       console.error('There was an error:', error);
     });
@@ -85,9 +85,9 @@ export class GreenEnergyComponent implements OnInit {
         newChargers.push(charger);
       });
       this.chargers = newChargers;
-      console.log(data);
-      console.log(this.chargers);
-      console.log(this.chargers[0]);
+      // console.log(data);
+      // console.log(this.chargers);
+      // console.log(this.chargers[0]);
 
       //odświeżenie widoku po otrzymaniu nowych danych
       this.cdr.detectChanges();
@@ -97,7 +97,7 @@ export class GreenEnergyComponent implements OnInit {
   }
 
   selectedCharger(charger: chargerInfo){
-    console.log('selected components data: '+charger);
+    // console.log('selected components data: '+charger);
     this.selectedChargerData=charger;
 
   }
@@ -106,7 +106,7 @@ export class GreenEnergyComponent implements OnInit {
     if (this.inputRadius === 0) {
       this.inputRadius = 15;
   }
-    console.log(latitudePassed, longitudePassed, this.inputRadius);
+    // console.log(latitudePassed, longitudePassed, this.inputRadius);
     const apiUrl = `https://api.openchargemap.io/v3/poi/?output=json&key=${this.apiKey}&latitude=${latitudePassed}&longitude=${longitudePassed}&distance=${this.inputRadius}`;
 
     this.http.get(apiUrl).subscribe((data: any) => {
@@ -117,9 +117,9 @@ export class GreenEnergyComponent implements OnInit {
         newChargers.push(charger);
       });
       this.chargers = newChargers;
-      console.log(data);
-      console.log(this.chargers);
-      console.log(this.chargers[0]);
+      // console.log(data);
+      // console.log(this.chargers);
+      // console.log(this.chargers[0]);
 
       //odświeżenie widoku po otrzymaniu nowych danych
       this.cdr.detectChanges();

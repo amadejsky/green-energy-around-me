@@ -12,7 +12,7 @@ export class ChargerComponent {
   @Output() passData = new EventEmitter<chargerInfo>();
 
   getDetails(selectedCh: chargerInfo){
-    console.log('I ll show you the details from: '+this.charger.AddressInfo);
+    // console.log('I ll show you the details from: '+this.charger.AddressInfo);
     this.passData.emit(selectedCh);
   }
 
