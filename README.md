@@ -1,7 +1,7 @@
 # 🌳Green Energy Around Me
 
 Green Energy Around Me is a web application that allows users to find and locate electric vehicle charging stations in their area. The application provides information about available charging stations, including location, availability, operator, fees, and more.
-<br> **The application is available at: [Green Energy Around Me](https://green-energy-around-me.web.app/)**
+<br> **The application is available at: [Green Energy Around Me](https://green-energy-around-you.web.app/)**
 
 ## About Project
 
