@@ -1,14 +1,14 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { chargerInfo } from '../../shared/charger-info';
-
+import { evnironment } from '../environment/environment';
 @Component({
   selector: 'app-green-energy',
   templateUrl: './green-energy.component.html',
   styleUrls: ['./green-energy.component.css']
 })
 export class GreenEnergyComponent implements OnInit {
-  apiKey = 'c32f8e59-8a86-4483-a54a-40c05ec5a237';
+  
   chargers: chargerInfo[] = [];
   inputLatitude = 0;
   inputLongitude = 0;
@@ -55,7 +55,7 @@ export class GreenEnergyComponent implements OnInit {
     const longitude = 21.0122; // wwa
     const radius = 25;  
 
-    const apiUrl = `https://api.openchargemap.io/v3/poi/?output=json&key=${this.apiKey}&latitude=${latitude}&longitude=${longitude}&distance=${radius}`;
+    const apiUrl = 'https://api.openchargemap.io/v3/poi/?output=json&key='+evnironment.googleAPIKey+`&latitude=${latitude}&longitude=${longitude}&distance=${radius}`;
 
     this.http.get(apiUrl).subscribe((data: any) => {
       data.forEach((chargerData: any) => {
@@ -75,7 +75,7 @@ export class GreenEnergyComponent implements OnInit {
       this.inputRadius = 1;
   }
     console.log(this.inputLatitude, this.inputLongitude, this.inputRadius);
-    const apiUrl = `https://api.openchargemap.io/v3/poi/?output=json&key=${this.apiKey}&latitude=${this.inputLatitude}&longitude=${this.inputLongitude}&distance=${this.inputRadius}`;
+    const apiUrl = 'https://api.openchargemap.io/v3/poi/?output=json&key='+evnironment.googleAPIKey+`&latitude=${this.inputLatitude}&longitude=${this.inputLongitude}&distance=${this.inputRadius}`;
 
     this.http.get(apiUrl).subscribe((data: any) => {
       this.chargers = []; 
@@ -107,7 +107,7 @@ export class GreenEnergyComponent implements OnInit {
       this.inputRadius = 15;
   }
     // console.log(latitudePassed, longitudePassed, this.inputRadius);
-    const apiUrl = `https://api.openchargemap.io/v3/poi/?output=json&key=${this.apiKey}&latitude=${latitudePassed}&longitude=${longitudePassed}&distance=${this.inputRadius}`;
+    const apiUrl = 'https://api.openchargemap.io/v3/poi/?output=json&key='+evnironment.googleAPIKey+`&latitude=${latitudePassed}&longitude=${longitudePassed}&distance=${this.inputRadius}`;
 
     this.http.get(apiUrl).subscribe((data: any) => {
       this.chargers = []; 
