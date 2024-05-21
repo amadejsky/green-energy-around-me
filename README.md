@@ -1,6 +1,7 @@
 # 🌳Green Energy Around Me
 
 Green Energy Around Me is a web application that allows users to find and locate electric vehicle charging stations in their area. The application provides information about available charging stations, including location, availability, operator, fees, and more.
+**The application is available at: [Green Energy Around Me](https://green-energy-around-me.web.app/)**
 
 ## About Project
 
@@ -19,21 +20,9 @@ The project utilizes the following technologies:
 - OpenChargeMap API: API for retrieving data about charging stations
 - Google Maps API: API for retrieving and visualizing location of selected station
 
-## Installation
-
-To run a local copy of the application, follow these steps:
-
-1. Clone the repository: `git clone https://github.com/your-username/green-energy-around-me.git`
-2. Navigate to the project directory: `cd green-energy-around-me`
-3. Install dependencies: `npm install`
-
 ## Running the Application
 
-After installing dependencies, run the application locally:
-
-1. Start the application: `npm start`
-2. Open your browser and go to: [http://localhost:4200](http://localhost:4200)
-3. To begin using the application, select "App" from the navigation bar.
+Simply enter: https://green-energy-around-me.web.app/
 
 ## Author
 
