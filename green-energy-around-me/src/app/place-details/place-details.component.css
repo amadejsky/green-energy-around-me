@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+}
+
+.pic {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 771px) {
+    .pic{
+        width:35vw;
+        height:45vw;
+    }
+   
+}

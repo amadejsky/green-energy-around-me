@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "green-energy-around-me"
-  }
+    "default": "green-energy-around-you",
+    "green": "green-energy-around-you"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

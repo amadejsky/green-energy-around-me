@@ -19,6 +19,7 @@
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
     background-color: rgba(0, 0, 0, 0.7); 
+    padding: 4vh;
 }
 .body{
     position: relative;
@@ -34,4 +35,50 @@
 span{
     background-color: aqua;
     font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 1200px){
+.info{
+    margin-left: 5vh;
+    margin-top: 5vh;
+    width:45%;
+    padding: 2vh;
+}    
+}
+
+@media only screen and (max-width: 870px){
+    .info{
+        margin-left: 4vh;
+        margin-top: 4vh;
+        width:55%;
+        padding: 2vh;
+        font-size: 0.8rem ;
+    }    
+    }
+@media only screen and (max-width: 679px){
+        .info{
+            margin-left: 4vh;
+            margin-top: 4vh;
+            width:65%;
+            padding: 2vh;
+            font-size: 0.6rem ;
+        }    
+}
+@media only screen and (max-width: 529px){
+        .info{
+            margin-left: 4vh;
+            margin-top: 4vh;
+            width:80%;
+            padding: 2vh;
+            font-size: 0.6rem ;
+        }    
+}
+@media only screen and (max-width: 379px){
+    .info{
+        margin-left: 2vh;
+        margin-top: 2vh;
+        width:93%;
+        padding: 2vh;
+        font-size: 0.5rem ;
+    }    
 }

@@ -1,51 +1,53 @@
-<div class="row">
-    <div *ngIf="charger.AddressInfo.AddressLine1; else noData">
-        <div class="col-md-6">
-            <h2 *ngIf="charger?.AddressInfo?.AddressLine1">{{charger.AddressInfo.AddressLine1}}</h2>
-        </div>
-        <div class="row">
-            <div class="div">
-                <iframe width="650" height="300" style="border:0" loading="lazy" allowfullscreen [src]="mapUrl"></iframe>
+<div class="col-xs-12 col-md-12 col-sm-12 container">
+    <div class="row">
+        <div *ngIf="charger.AddressInfo.AddressLine1; else noData">
+            <div class="col-md-6">
+                <h2 *ngIf="charger?.AddressInfo?.AddressLine1">{{charger.AddressInfo.AddressLine1}}</h2>
             </div>
-            <div class="div" style="display: inline-block;">
-                <span *ngIf="charger?.AddressInfo?.Town">{{charger.AddressInfo.Town}}&nbsp;</span>
-                <span *ngIf="charger?.AddressInfo?.Postcode">{{charger.AddressInfo.Postcode}}&nbsp;</span>
-                <span *ngIf="charger?.AddressInfo?.Country?.Title">{{charger.AddressInfo.Country.Title}}</span>
+            <div class="row">
+                <div class="div">
+                    <iframe width="650" height="300" style="border:0" loading="lazy" allowfullscreen [src]="mapUrl"></iframe>
+                </div>
+                <div class="div" style="display: inline-block;">
+                    <span *ngIf="charger?.AddressInfo?.Town">{{charger.AddressInfo.Town}}&nbsp;</span>
+                    <span *ngIf="charger?.AddressInfo?.Postcode">{{charger.AddressInfo.Postcode}}&nbsp;</span>
+                    <span *ngIf="charger?.AddressInfo?.Country?.Title">{{charger.AddressInfo.Country.Title}}</span>
+                </div>
+            </div>
+            <div class="row" *ngIf="charger?.AddressInfo?.ContactEmail">
+                Place Contact: <a href="mailto:{{charger.AddressInfo.ContactEmail}}">{{charger.AddressInfo.ContactEmail}}</a>
+            </div>
+            <div class="row" *ngIf="charger?.AddressInfo?.ContactTelephone1">Addres telephone:
+                {{charger.AddressInfo.ContactTelephone1}}
+            </div>
+            <div class="row" *ngIf="charger?.DataProvider?.WebsiteURL">
+                Charger provider website:
+                <a href="{{ charger.DataProvider.WebsiteURL }}" target="_blank">{{ charger.DataProvider.WebsiteURL }}</a>
+            </div>
+            <div class="row" *ngIf="charger.DateCreated">
+                Date of creation: {{charger.DateCreated}}
+            </div>
+            <div class="row" *ngIf="charger.DateLastStatusUpdate">
+                Date of latest update:{{charger.DateLastStatusUpdate}}
+            </div>
+            <div class="row" *ngIf="charger?.OperatorInfo?.WebsiteURL">
+                Operator Website:
+                <a href="{{charger.OperatorInfo.WebsiteURL}}" target="_blank">{{charger.OperatorInfo.WebsiteURL}}</a>
+            </div>
+            <div class="row" *ngIf="charger?.OperatorInfo?.PhonePrimaryContact">
+                Operator Phone Contact:{{charger.OperatorInfo.PhonePrimaryContact}}
+            </div>
+            <div class="row" *ngIf="charger.UsageCost">
+                Usage Cost:{{charger.UsageCost}}
+            </div>
+            <div class="row" *ngIf="charger.UserComments">
+                Additional user comments: {{ parseUserComments(charger.UserComments) }}
             </div>
         </div>
-        <div class="row" *ngIf="charger?.AddressInfo?.ContactEmail">
-            Place Contact: <a href="mailto:{{charger.AddressInfo.ContactEmail}}">{{charger.AddressInfo.ContactEmail}}</a>
+       <ng-template #noData>
+        <div>
+            <img src="../../assets/undraw_My_location_re_r52x.png" class="pic">
         </div>
-        <div class="row" *ngIf="charger?.AddressInfo?.ContactTelephone1">Addres telephone:
-            {{charger.AddressInfo.ContactTelephone1}}
-        </div>
-        <div class="row" *ngIf="charger?.DataProvider?.WebsiteURL">
-            Charger provider website:
-            <a href="{{ charger.DataProvider.WebsiteURL }}" target="_blank">{{ charger.DataProvider.WebsiteURL }}</a>
-        </div>
-        <div class="row" *ngIf="charger.DateCreated">
-            Date of creation: {{charger.DateCreated}}
-        </div>
-        <div class="row" *ngIf="charger.DateLastStatusUpdate">
-            Date of latest update:{{charger.DateLastStatusUpdate}}
-        </div>
-        <div class="row" *ngIf="charger?.OperatorInfo?.WebsiteURL">
-            Operator Website:
-            <a href="{{charger.OperatorInfo.WebsiteURL}}" target="_blank">{{charger.OperatorInfo.WebsiteURL}}</a>
-        </div>
-        <div class="row" *ngIf="charger?.OperatorInfo?.PhonePrimaryContact">
-            Operator Phone Contact:{{charger.OperatorInfo.PhonePrimaryContact}}
-        </div>
-        <div class="row" *ngIf="charger.UsageCost">
-            Usage Cost:{{charger.UsageCost}}
-        </div>
-        <div class="row" *ngIf="charger.UserComments">
-            Additional user comments: {{ parseUserComments(charger.UserComments) }}
-        </div>
+       </ng-template>
     </div>
-   <ng-template #noData>
-    <div>
-        <img src = "../../assets/undraw_My_location_re_r52x.png" width="600" height="600">
-    </div>
-   </ng-template>
 </div>
